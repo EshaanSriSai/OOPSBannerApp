@@ -1,55 +1,28 @@
 /**
  * OOPSBannerApp
- * Displays the word "OOPS" as a large banner
- * using String.join() for better memory efficiency.
+ * Displays the word "OOPS" using String array and loops.
  *
  * @author Eshaan
- * @version 3.0
+ * @version 4.0
  */
 public class OOPSBannerApp {
 
     public static void main(String[] args) {
 
-        System.out.println(String.join("   ",
-                " ***** ",
-                " ***** ",
-                " ***** ",
-                " ***** "));
+        String[] banner = {
 
-        System.out.println(String.join("   ",
-                "*     *",
-                "*     *",
-                "*     *",
-                "*      "));
+                String.join("   ", " ***** ", " ***** ", " ***** ", " ***** "),
+                String.join("   ", "*     *", "*     *", "*     *", "*      "),
+                String.join("   ", "*     *", "*     *", "*     *", "*      "),
+                String.join("   ", "*     *", "*     *", "*     *", " ***** "),
+                String.join("   ", "*     *", "*     *", "*     *", "      *"),
+                String.join("   ", "*     *", "*     *", "*     *", "      *"),
+                String.join("   ", " ***** ", " ***** ", " ***** ", " ***** ")
+        };
 
-        System.out.println(String.join("   ",
-                "*     *",
-                "*     *",
-                "*     *",
-                "*      "));
-
-        System.out.println(String.join("   ",
-                "*     *",
-                "*     *",
-                "*     *",
-                " ***** "));
-
-        System.out.println(String.join("   ",
-                "*     *",
-                "*     *",
-                "*     *",
-                "      *"));
-
-        System.out.println(String.join("   ",
-                "*     *",
-                "*     *",
-                "*     *",
-                "      *"));
-
-        System.out.println(String.join("   ",
-                " ***** ",
-                " ***** ",
-                " ***** ",
-                " ***** "));
+        // Enhanced for-loop to print banner
+        for (String line : banner) {
+            System.out.println(line);
+        }
     }
 }
