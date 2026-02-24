@@ -1,26 +1,27 @@
 /**
  * OOPSBannerApp
- * Displays the word "OOPS" using String array and loops.
+ * Displays the word "OOPS"
+ * using compact array initialization and String.join().
  *
  * @author Eshaan
- * @version 4.0
+ * @version 5.0
  */
 public class OOPSBannerApp {
 
     public static void main(String[] args) {
 
-        String[] banner = {
+        String[] banner = new String[] {
 
-                String.join("   ", " ***** ", " ***** ", " ***** ", " ***** "),
-                String.join("   ", "*     *", "*     *", "*     *", "*      "),
-                String.join("   ", "*     *", "*     *", "*     *", "*      "),
-                String.join("   ", "*     *", "*     *", "*     *", " ***** "),
-                String.join("   ", "*     *", "*     *", "*     *", "      *"),
-                String.join("   ", "*     *", "*     *", "*     *", "      *"),
-                String.join("   ", " ***** ", " ***** ", " ***** ", " ***** ")
+            String.join("   ", " ***** ", " ***** ", " ***** ", " ***** "),
+            String.join("   ", "*     *", "*     *", "*     *", "*      "),
+            String.join("   ", "*     *", "*     *", "*     *", "*      "),
+            String.join("   ", "*     *", "*     *", "*     *", " ***** "),
+            String.join("   ", "*     *", "*     *", "*     *", "      *"),
+            String.join("   ", "*     *", "*     *", "*     *", "      *"),
+            String.join("   ", " ***** ", " ***** ", " ***** ", " ***** ")
+
         };
 
-        // Enhanced for-loop to print banner
         for (String line : banner) {
             System.out.println(line);
         }
