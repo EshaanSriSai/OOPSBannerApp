@@ -1,29 +1,67 @@
 /**
  * OOPSBannerApp
  * Displays the word "OOPS"
- * using compact array initialization and String.join().
+ * using static helper methods for each letter.
  *
  * @author Eshaan
- * @version 5.0
+ * @version 6.0
  */
 public class OOPSBannerApp {
 
     public static void main(String[] args) {
 
-        String[] banner = new String[] {
+        String[] o = getO();
+        String[] p = getP();
+        String[] s = getS();
 
-            String.join("   ", " ***** ", " ***** ", " ***** ", " ***** "),
-            String.join("   ", "*     *", "*     *", "*     *", "*      "),
-            String.join("   ", "*     *", "*     *", "*     *", "*      "),
-            String.join("   ", "*     *", "*     *", "*     *", " ***** "),
-            String.join("   ", "*     *", "*     *", "*     *", "      *"),
-            String.join("   ", "*     *", "*     *", "*     *", "      *"),
-            String.join("   ", " ***** ", " ***** ", " ***** ", " ***** ")
-
-        };
-
-        for (String line : banner) {
-            System.out.println(line);
+        for (int i = 0; i < o.length; i++) {
+            System.out.println(
+                    String.join("   ",
+                            o[i],
+                            o[i],
+                            p[i],
+                            s[i]
+                    )
+            );
         }
+    }
+
+    // Static method for letter O
+    public static String[] getO() {
+        return new String[]{
+                " ***** ",
+                "*     *",
+                "*     *",
+                "*     *",
+                "*     *",
+                "*     *",
+                " ***** "
+        };
+    }
+
+    // Static method for letter P
+    public static String[] getP() {
+        return new String[]{
+                " ***** ",
+                "*     *",
+                "*     *",
+                " ***** ",
+                "*      ",
+                "*      ",
+                "*      "
+        };
+    }
+
+    // Static method for letter S
+    public static String[] getS() {
+        return new String[]{
+                " ***** ",
+                "*      ",
+                "*      ",
+                " ***** ",
+                "      *",
+                "      *",
+                " ***** "
+        };
     }
 }
