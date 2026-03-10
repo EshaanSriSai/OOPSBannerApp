@@ -1,16 +1,40 @@
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * OOPSBannerApp
- * Displays the word "OOPS"
- * using a CharacterPattern class for better OOP structure.
- *
- * @author Eshaan
- * @version 7.0
+ * Uses a HashMap to store character patterns and render the banner.
  */
 public class OOPSBannerApp {
 
     public static void main(String[] args) {
 
-        CharacterPattern o = new CharacterPattern('O', new String[]{
+        Map<Character, String[]> patternMap = buildPatternMap();
+
+        String word = "OOPS";
+
+        int height = 7;
+
+        for (int row = 0; row < height; row++) {
+
+            for (char ch : word.toCharArray()) {
+
+                String[] pattern = patternMap.get(ch);
+
+                System.out.print(pattern[row] + "   ");
+
+            }
+
+            System.out.println();
+        }
+    }
+
+    // Function to build character pattern map
+    public static Map<Character, String[]> buildPatternMap() {
+
+        Map<Character, String[]> map = new HashMap<>();
+
+        map.put('O', new String[]{
                 " ***** ",
                 "*     *",
                 "*     *",
@@ -20,7 +44,7 @@ public class OOPSBannerApp {
                 " ***** "
         });
 
-        CharacterPattern p = new CharacterPattern('P', new String[]{
+        map.put('P', new String[]{
                 " ***** ",
                 "*     *",
                 "*     *",
@@ -30,7 +54,7 @@ public class OOPSBannerApp {
                 "*      "
         });
 
-        CharacterPattern s = new CharacterPattern('S', new String[]{
+        map.put('S', new String[]{
                 " ***** ",
                 "*      ",
                 "*      ",
@@ -40,36 +64,6 @@ public class OOPSBannerApp {
                 " ***** "
         });
 
-        CharacterPattern[] word = {o, o, p, s};
-
-        for (int row = 0; row < 7; row++) {
-            StringBuilder line = new StringBuilder();
-
-            for (CharacterPattern cp : word) {
-                line.append(cp.getPattern()[row]).append("   ");
-            }
-
-            System.out.println(line);
-        }
-    }
-
-    // Static Inner Class
-    static class CharacterPattern {
-
-        private char character;
-        private String[] pattern;
-
-        public CharacterPattern(char character, String[] pattern) {
-            this.character = character;
-            this.pattern = pattern;
-        }
-
-        public char getCharacter() {
-            return character;
-        }
-
-        public String[] getPattern() {
-            return pattern;
-        }
+        return map;
     }
 }
