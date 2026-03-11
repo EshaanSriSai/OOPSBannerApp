@@ -3,7 +3,7 @@ import java.util.Map;
 
 /**
  * OOPSBannerApp
- * Uses a HashMap to store character patterns and render the banner.
+ * UC8: Store character patterns in HashMap
  */
 public class OOPSBannerApp {
 
@@ -12,16 +12,14 @@ public class OOPSBannerApp {
         Map<Character, String[]> patternMap = buildPatternMap();
 
         String word = "OOPS";
-
         int height = 7;
 
-        for (int row = 0; row < height; row++) {
+        for (int i = 0; i < height; i++) {
 
-            for (char ch : word.toCharArray()) {
+            for (char c : word.toCharArray()) {
 
-                String[] pattern = patternMap.get(ch);
-
-                System.out.print(pattern[row] + "   ");
+                String[] pattern = patternMap.get(c);
+                System.out.print(pattern[i] + "   ");
 
             }
 
@@ -29,7 +27,6 @@ public class OOPSBannerApp {
         }
     }
 
-    // Function to build character pattern map
     public static Map<Character, String[]> buildPatternMap() {
 
         Map<Character, String[]> map = new HashMap<>();
